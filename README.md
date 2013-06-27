@@ -14,30 +14,34 @@ PWMピンはPWMの使えるピン番号にしてください。
 `MotorDriver driver(1,2,3);`  
 PWMピンの指定は省略することができます。  
 その場合は速度が常に最大になります。(VREFに何も繋げない)  
-`MotorDriver driver(1,2)`  
+`MotorDriver driver(1,2);`  
   
-forward,back,stop,brakeの関数によりモーターを制御します。  
+forward,reverse,stop,brakeの関数によりモーターを制御します。  
 
 ###void MotorDriver::forward(uint8_t speed)
 forward関数はモーターを正転させます。  
-引数は速度で0~255の整数を入れます。引数は省略可能でその場合は最大速度(255)になります。
+引数は速度で0~255の整数を入れます。引数は省略可能でその場合は最大速度(255)になります。  
+例：`driver.forward(100);`
 
 ###void MotorDriver::reverse(uint8_t speed)
-forward関数はモーターを逆転させます。  
-引数は速度で0~255の整数を入れます。引数は省略可能でその場合は最大速度(255)になります。
+reverse関数はモーターを逆転させます。  
+引数は速度で0~255の整数を入れます。引数は省略可能でその場合は最大速度(255)になります。  
+例：`driver.reverse(100);`
 
 ###void MotorDriver::stop()
-forward関数はモーターを停止させます。  
-引数はありません。
+stop関数はモーターを停止させます。  
+引数はありません。  
+例：`driver.stop();`
 
-###void MotorDriver::forward()
-forward関数はモーターに回生ブレーキをかけます。  
-引数はありません。
+###void MotorDriver::brake()
+brake関数はモーターに回生ブレーキをかけます。  
+引数はありません。  
+例：`driver.brake();`
 
-###void MotorDriver::driver(DriveMode mode,uint8_t speed)
+###void MotorDriver::drive(DriveMode mode,uint8_t speed)
 モーター駆動を制御します。  
 modeに入れた種別により、正転・反転・停止・ブレーキの動作が変わります。  
-この関数は作者のプログラムの互換性維持のために残しているためなるべく使わないでください。
+この関数は作者のプログラムの互換性維持のために残しているだけのため、なるべく使わないでください。
 
 ##バージョン
 ###2013.6.27 Ver1.0
