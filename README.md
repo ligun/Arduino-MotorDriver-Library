@@ -11,10 +11,10 @@ Arduino-MotorDriverLibrary
 まず、グローバルな領域でクラスのインスタンス化を行います。  
 コンストラクタの引数は3つで制御ピン1、制御ピン2、PWMピンです。
 PWMピンはPWMの使えるピン番号にしてください。  
-'MotorDriver driver(1,2,3);'  
+`MotorDriver driver(1,2,3);`  
 PWMピンの指定は省略することができます。  
 その場合は速度が常に最大になります。(VREFに何も繋げない)  
-'MotorDriver driver(1,2)'  
+`MotorDriver driver(1,2)`  
   
 forward,back,stop,brakeの関数によりモーターを制御します。  
 
@@ -22,7 +22,7 @@ forward,back,stop,brakeの関数によりモーターを制御します。
 forward関数はモーターを正転させます。  
 引数は速度で0~255の整数を入れます。引数は省略可能でその場合は最大速度(255)になります。
 
-###void MotorDriver::back(uint8_t speed)
+###void MotorDriver::reverse(uint8_t speed)
 forward関数はモーターを逆転させます。  
 引数は速度で0~255の整数を入れます。引数は省略可能でその場合は最大速度(255)になります。
 
@@ -40,4 +40,7 @@ modeに入れた種別により、正転・反転・停止・ブレーキの動�
 この関数は作者のプログラムの互換性維持のために残しているためなるべく使わないでください。
 
 ##バージョン
-###2013.6.27　Ver1.0
+###2013.6.27 Ver1.0
+
+###2013.6.28 Ver1.1
+モーター逆転の関数名をreverseに変更

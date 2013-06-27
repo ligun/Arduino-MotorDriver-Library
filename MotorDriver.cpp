@@ -25,8 +25,8 @@ void MotorDriver::drive(DRIVE_MODE mode,uint8_t speed){
     case FORWARD:
   	this -> forward(speed);
     break;
-    case BACK:
-  	this -> back(speed);
+    case REVERSE:
+  	this -> reverse(speed);
     break;
     case STOP:
   	this -> stop();
@@ -48,7 +48,7 @@ void MotorDriver::forward(uint8_t speed){
   }
 }
 
-void MotorDriver::back(uint8_t speed){
+void MotorDriver::reverse(uint8_t speed){
   digitalWrite(this -> motor_pin1,LOW);
   digitalWrite(this -> motor_pin2,HIGH);
   if(this -> pwm_pin >= 0){

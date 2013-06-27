@@ -5,7 +5,7 @@
 
 typedef enum {
   FORWARD,
-  BACK,
+  REVERSE,
   STOP,
   BRAKE,
 }DRIVE_MODE;
@@ -20,7 +20,7 @@ class MotorDriver{
   void init(int8_t,int8_t,int8_t = -1);
   void drive(DRIVE_MODE,uint8_t = 255);
   void forward(uint8_t = 255);
-  void back(uint8_t = 255);
+  void reverse(uint8_t = 255);
   void stop();
   void brake();
 };
